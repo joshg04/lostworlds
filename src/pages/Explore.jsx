@@ -1,17 +1,73 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const Products = () => {
-  return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Navbar />
-      <div className="flex-grow pt-20 sm:pt-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-8">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Products</h1>
-        <p className="text-base sm:text-lg text-gray-600">Explore our collection...</p>
+const Products = () => (
+  <div
+    style={{
+      minHeight: '100vh',
+      background: '#000011',
+      color: '#fff',
+      display: 'flex',
+      flexDirection: 'column',
+      fontFamily: '"Courier New", Courier, monospace',
+    }}
+  >
+    <Navbar />
+
+    <div
+      style={{
+        flex: 1,
+        maxWidth: '900px',
+        margin: '0 auto',
+        width: '100%',
+        padding: '80px 20px 40px',
+      }}
+    >
+      {/* Page header panel */}
+      <div
+        style={{
+          border: '2px solid #ff8833',
+          padding: '14px 20px',
+          marginBottom: '24px',
+          background: 'rgba(255,136,51,0.03)',
+          position: 'relative',
+        }}
+      >
+        <span style={{ position: 'absolute', top: -6, left: -6, color: '#ff8833', fontSize: '10px' }}>◆</span>
+        <span style={{ position: 'absolute', top: -6, right: -6, color: '#ff8833', fontSize: '10px' }}>◆</span>
+        <span style={{ position: 'absolute', bottom: -6, left: -6, color: '#ff8833', fontSize: '10px' }}>◆</span>
+        <span style={{ position: 'absolute', bottom: -6, right: -6, color: '#ff8833', fontSize: '10px' }}>◆</span>
+        <h1
+          style={{
+            fontFamily: 'Impact, "Arial Black", sans-serif',
+            fontSize: 'clamp(26px, 5vw, 40px)',
+            letterSpacing: '4px',
+            color: '#ff8833',
+            margin: 0,
+            textShadow: '0 0 14px rgba(255,136,51,0.5)',
+          }}
+        >
+          ◄ EXPLORE THE COLLECTION ►
+        </h1>
       </div>
-      <Footer />
+
+      {/* Content panel */}
+      <div
+        style={{
+          border: '1px solid #221100',
+          padding: '24px',
+          background: 'rgba(30,10,0,0.6)',
+          lineHeight: 2,
+          fontSize: '14px',
+          color: '#aa7755',
+        }}
+      >
+        <p>Explore our collection...</p>
+      </div>
     </div>
-  );
-};
+
+    <Footer />
+  </div>
+);
 
 export default Products;

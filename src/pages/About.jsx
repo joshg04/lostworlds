@@ -1,17 +1,73 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const About = () => {
-  return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Navbar />
-      <div className="flex-grow pt-20 sm:pt-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-8">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">About</h1>
-        <p className="text-base sm:text-lg text-gray-600">Learn more about Lost Worlds...</p>
+const About = () => (
+  <div
+    style={{
+      minHeight: '100vh',
+      background: '#000011',
+      color: '#fff',
+      display: 'flex',
+      flexDirection: 'column',
+      fontFamily: '"Courier New", Courier, monospace',
+    }}
+  >
+    <Navbar />
+
+    <div
+      style={{
+        flex: 1,
+        maxWidth: '900px',
+        margin: '0 auto',
+        width: '100%',
+        padding: '80px 20px 40px',
+      }}
+    >
+      {/* Page header panel */}
+      <div
+        style={{
+          border: '2px solid #00ffff',
+          padding: '14px 20px',
+          marginBottom: '24px',
+          background: 'rgba(0,255,255,0.03)',
+          position: 'relative',
+        }}
+      >
+        <span style={{ position: 'absolute', top: -6, left: -6, color: '#00ffff', fontSize: '10px' }}>◆</span>
+        <span style={{ position: 'absolute', top: -6, right: -6, color: '#00ffff', fontSize: '10px' }}>◆</span>
+        <span style={{ position: 'absolute', bottom: -6, left: -6, color: '#00ffff', fontSize: '10px' }}>◆</span>
+        <span style={{ position: 'absolute', bottom: -6, right: -6, color: '#00ffff', fontSize: '10px' }}>◆</span>
+        <h1
+          style={{
+            fontFamily: 'Impact, "Arial Black", sans-serif',
+            fontSize: 'clamp(26px, 5vw, 40px)',
+            letterSpacing: '4px',
+            color: '#00ffff',
+            margin: 0,
+            textShadow: '0 0 14px rgba(0,255,255,0.5)',
+          }}
+        >
+          ◄ ABOUT LOST WORLDS ►
+        </h1>
       </div>
-      <Footer />
+
+      {/* Content panel */}
+      <div
+        style={{
+          border: '1px solid #0a2233',
+          padding: '24px',
+          background: 'rgba(0,15,35,0.6)',
+          lineHeight: 2,
+          fontSize: '14px',
+          color: '#6699aa',
+        }}
+      >
+        <p>Learn more about Lost Worlds...</p>
+      </div>
     </div>
-  );
-};
+
+    <Footer />
+  </div>
+);
 
 export default About;
