@@ -1,46 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useMemo } from 'react';
 import Footer from '../components/Footer';
 
 const MARQUEE_TOP =
   '★ LOST WORLDS ★ EXPLORE THE COLLECTION ★ NEW DROPS AVAILABLE ★ FIND YOUR FIT ★ ';
 const MARQUEE_BOT =
   '◈ THE OFFICIAL LOST WORLDS EXPERIENCE ◈ APPAREL FOR THE UNKNOWN ◈ EXPLORE ◈ DISCOVER ◈ ';
-
-const StarField = () => {
-  const stars = useMemo(
-    () =>
-      Array.from({ length: 130 }, (_, i) => ({
-        id: i,
-        top: (i * 7.3 + 13.7) % 100,
-        left: (i * 11.7 + 27.3) % 100,
-        size: (i % 3) + 1,
-        delay: (i * 0.37) % 5,
-        duration: 2 + (i * 0.53) % 4,
-      })),
-    []
-  );
-
-  return (
-    <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' }}>
-      {stars.map((s) => (
-        <div
-          key={s.id}
-          style={{
-            position: 'absolute',
-            top: `${s.top}%`,
-            left: `${s.left}%`,
-            width: `${s.size}px`,
-            height: `${s.size}px`,
-            background: 'white',
-            borderRadius: '50%',
-            animation: `twinkle ${s.duration}s ${s.delay}s infinite`,
-          }}
-        />
-      ))}
-    </div>
-  );
-};
 
 const MarqueeBand = ({ text, color, bg, reverse }) => {
   const content = text.repeat(20);
@@ -107,15 +71,13 @@ const Hero = () => (
   <div
     style={{
       minHeight: '100vh',
-      background: 'radial-gradient(ellipse at center, #000033 0%, #000011 55%, #000 100%)',
+      background: `url('${import.meta.env.BASE_URL}bg_stars.gif') repeat #000`,
       display: 'flex',
       flexDirection: 'column',
       position: 'relative',
       overflow: 'hidden',
     }}
   >
-    <StarField />
-
     {/* Info bar */}
     <div
       style={{
